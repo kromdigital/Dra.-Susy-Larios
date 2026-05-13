@@ -1,0 +1,864 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f6ecef;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed; /* 🔥 clave */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+
+  background: rgba(246, 236, 239, 0.582); /* mismo color pero con transparencia */
+  backdrop-filter: blur(10px); /* efecto pro */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.logo img{
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: all 0.3s ease; /* 🔥 animación */
+}
+
+nav a.active {
+  color: #f25d7a;
+  font-weight: 500;
+}
+
+.btn-contacto {
+  background: #f25d7a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+
+  text-decoration: none; /* 🔥 quita la línea */
+  display: inline-block; /* 🔥 hace que el <a> se comporte como botón */
+}
+
+.btn-contacto:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #f25d7a;
+  color: #f25d7a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #f25d7a;
+}
+
+.hero p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #f25d7a;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #f25d7a;
+  color: #f25d7a;
+  padding: 14px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.hero-image{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hero-image img{
+    width: 80%;
+    max-width: 700px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    transition: all 0.4s ease;
+}
+
+/* EFECTO ROSA */
+.hero-image img:hover{
+
+    transform: scale(1.03) translateY(-5px);
+
+    box-shadow:
+    0 0 15px rgba(255, 105, 180, 0.6),
+    0 0 30px rgba(255, 105, 180, 0.4),
+    0 20px 40px rgba(0,0,0,0.35);
+
+    filter: brightness(1.05);
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* BOTONES BASE */
+.btn-primary,
+.btn-outline,
+.btn-contacto {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER PRINCIPAL */
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(242, 93, 122, 0.35);
+}
+
+/* EFECTO OUTLINE */
+.btn-outline:hover {
+  background: #f25d7a;
+  color: white;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(242, 93, 122, 0.25);
+}
+
+/* BOTÓN NAV */
+.btn-contacto:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(242, 93, 122, 0.3);
+}
+
+/* EFECTO CLICK (PRESS) */
+.btn-primary:active,
+.btn-outline:active,
+.btn-contacto:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* EFECTO BRILLO (shine) */
+.btn-primary::before,
+.btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: all 0.6s;
+}
+
+.btn-primary:hover::before,
+.btn-outline:hover::before {
+  left: 100%;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* SECTION */
+.services {
+  background: #e9d7dc;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+.section-badge {
+  display: inline-block;
+  color: #f25d7a;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.services h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.section-desc {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-size: 14px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: #f5eef1;
+  border-radius: 18px;
+  overflow: hidden;
+  width: 300px;
+  text-align: left;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 20px;
+}
+
+.card-content .icon {
+  background: #f7dce3;
+  color: #f25d7a;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* HOVER ANIMACIÓN PRO */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card img {
+  transition: transform 0.4s ease;
+}
+
+/* ICON ANIMATION */
+.card:hover .icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.icon {
+  transition: all 0.3s ease;
+}
+
+/* SECTION */
+.before-after {
+  background: #f6ecef;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+/* GRID */
+.ba-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.ba-item {
+  width: 420px;
+  text-align: left;
+}
+
+/* IMAGE WRAPPER */
+.ba-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: ew-resize;
+}
+
+/* IMAGES */
+.ba-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BEFORE IMAGE (overlay) */
+.img-before {
+  clip-path: inset(0 50% 0 0);
+  z-index: 2;
+  transition: clip-path 0.2s;
+}
+
+/* SLIDER LINE */
+.ba-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  z-index: 3;
+}
+
+/* LABELS */
+.label {
+  position: absolute;
+  top: 10px;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+  z-index: 4;
+}
+
+.label.before {
+  left: 10px;
+  background: #555;
+}
+
+.label.after {
+  right: 10px;
+  background: #f25d7a;
+}
+
+/* TEXT */
+.ba-item h3 {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.ba-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* HOVER EFFECT */
+.ba-image:hover .ba-slider {
+  background: #f25d7a;
+}
+
+/* SECTION */
+.location {
+  background: #f6ecef;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+/* MAP */
+.map-container {
+  margin-top: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* INFO GRID */
+.location-info {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* ITEM */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 300px;
+  text-align: left;
+}
+
+/* ICON */
+.info-item .icon {
+  background: #f7dce3;
+  color: #f25d7a;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* TEXT */
+.info-item h4 {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.info-item p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* HOVER SUAVE */
+.info-item:hover .icon {
+  transform: scale(1.1);
+  background: #f25d7a;
+  color: white;
+}
+
+.info-item .icon {
+  transition: all 0.3s ease;
+}
+
+/* SECTION */
+.social {
+  background: #e9d7dc;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+/* ICONS CONTAINER */
+.social-icons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* BOTONES BASE */
+.social-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #444;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+/* HOVER GENERAL */
+.social-btn:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* EFECTO CLICK */
+.social-btn:active {
+  transform: scale(0.95);
+}
+
+/* INSTAGRAM NORMAL (igual que los demás) */
+.social-btn.instagram {
+  background: #eeeeee;
+  color: #444;
+}
+
+/* INSTAGRAM HOVER (ahora sí aparece el color) */
+.social-btn.instagram:hover {
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+  color: white;
+}
+
+/* FACEBOOK HOVER */
+.social-btn.facebook:hover {
+  background: #1877f2;
+  color: white;
+}
+
+/* WHATSAPP HOVER */
+.social-btn.whatsapp:hover {
+  background: #25D366;
+  color: white;
+}
+
+/* TIKTOK HOVER */
+.social-btn.tiktok:hover {
+  background: #000;
+  color: white;
+}
+
+/* EFECTO BRILLO */
+.social-btn::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  top: 0;
+  left: -120%;
+  transition: 0.6s;
+}
+
+.social-btn:hover::before {
+  left: 120%;
+}
+
+/* ANIMACIÓN PULSO (instagram como en diseño) */
+.social-btn.active {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(242, 93, 122, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(242, 93, 122, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 93, 122, 0);
+  }
+}
+
+
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(180deg, #2c2c2c, #1f1f1f);
+  color: #ccc;
+  padding: 60px 60px 20px;
+}
+
+/* GRID */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* COLUMN */
+.footer-col {
+  max-width: 320px;
+}
+
+/* LOGO */
+.footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer .logo .icon {
+  width: 28px;
+  height: 28px;
+  background: #f25d7a;
+  border-radius: 50% 50% 50% 0;
+}
+
+/* TEXT */
+.footer p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.footer small {
+  font-size: 12px;
+  color: #777;
+}
+
+/* TITLES */
+.footer h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* CONTACT ITEMS */
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-item .icon {
+  background: #333;
+  color: #f25d7a;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HOURS */
+.hours {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.closed {
+  color: #777;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 40px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #777;
+}
+
+.footer-bottom .links a {
+  color: #777;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* HOVER LINKS */
+.footer-bottom .links a:hover {
+  color: #f25d7a;
+}
+
+/* ICON HOVER */
+.footer-item:hover .icon {
+  background: #f25d7a;
+  color: white;
+  transform: scale(1.1);
+}
+
+.footer-item .icon {
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav a.active {
+  color: #f25d7a;
+  font-weight: 500;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1000;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+.whatsapp:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* CLICK */
+.whatsapp:active {
+  transform: scale(0.95);
+}
+
+/* ICONO */
+.whatsapp i {
+  transition: transform 0.3s ease;
+}
+
+.whatsapp:hover i {
+  transform: scale(1.2);
+}
+
+/* PULSO (llamativo) */
+.whatsapp::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.5);
+  z-index: -1;
+  animation: pulseWA 2s infinite;
+}
+
+@keyframes pulseWA {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
