@@ -121,3 +121,51 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 80
+    },
+
+    color: {
+      value: "#f92751"
+    },
+
+    shape: {
+      type: "circle"
+    },
+
+    opacity: {
+      value: 0.53
+    },
+
+    size: {
+      value: 4
+    },
+
+    move: {
+      enable: true,
+      speed: 1.2
+    },
+
+    line_linked: {
+      enable: true,
+      distance: 140,
+      color: "#f2224c",
+      opacity: 0.53,
+      width: 1
+    }
+  },
+
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "grab"
+      }
+    }
+  },
+
+  retina_detect: true
+});
