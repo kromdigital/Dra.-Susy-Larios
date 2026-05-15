@@ -52,14 +52,17 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
+
+
 document.querySelectorAll(".ba-image").forEach(container => {
+
   const before = container.querySelector(".img-before");
   const slider = container.querySelector(".ba-slider");
 
-  let isDown = false;
-
   const move = (x) => {
+
     const rect = container.getBoundingClientRect();
+
     let offset = x - rect.left;
 
     if (offset < 0) offset = 0;
@@ -68,25 +71,20 @@ document.querySelectorAll(".ba-image").forEach(container => {
     const percent = (offset / rect.width) * 100;
 
     before.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+
     slider.style.left = percent + "%";
   };
 
-  container.addEventListener("mousedown", () => isDown = true);
-  container.addEventListener("mouseup", () => isDown = false);
-  container.addEventListener("mouseleave", () => isDown = false);
-
+  /* PC → solo mover mouse */
   container.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
     move(e.clientX);
   });
 
   /* MOBILE */
-  container.addEventListener("touchstart", () => isDown = true);
-  container.addEventListener("touchend", () => isDown = false);
-
   container.addEventListener("touchmove", (e) => {
     move(e.touches[0].clientX);
   });
+
 });
 
 const buttons = document.querySelectorAll(".social-btn");

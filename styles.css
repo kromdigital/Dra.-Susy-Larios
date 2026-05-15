@@ -248,6 +248,7 @@ nav a.active {
   cursor: pointer;
 }
 
+
 /* BOTONES BASE */
 .btn-primary,
 .btn-outline,
@@ -627,7 +628,7 @@ section {
 /* HOVER SUAVE */
 .info-item:hover .icon {
   transform: scale(1.1);
-  background: #f25d7a;
+  background: #f4adbb;
   color: white;
 }
 
@@ -806,14 +807,30 @@ section {
 }
 
 .footer-item .icon {
-  background: #333;
-  color: #f25d7a;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-radius: 14px;
+
+  background: rgba(242, 93, 122, 0.12);
+
+  color: #f25d7a;
+
+  font-size: 18px;
+
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.18),
+    inset 0 1px 1px rgba(255,255,255,0.05);
+
+  transition: all 0.35s ease;
 }
 
 /* HOURS */
@@ -893,6 +910,10 @@ nav a.active {
   transition: all 0.3s ease;
 }
 
+.info-item .icon i{
+    font-size: 18px;
+}
+
 /* HOVER */
 .whatsapp:hover {
   transform: scale(1.1) translateY(-5px);
@@ -911,6 +932,29 @@ nav a.active {
 
 .whatsapp:hover i {
   transform: scale(1.2);
+}
+
+.footer-bottom .links a{
+  text-decoration: none;
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.footer-bottom .links strong{
+  color: #f25d7a;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.footer-bottom .links a:hover{
+  transform: translateY(-2px);
+}
+
+.footer-bottom .links a:hover strong{
+  color: white;
+  text-shadow: 0 0 10px rgba(242,93,122,0.6);
 }
 
 /* PULSO (llamativo) */
